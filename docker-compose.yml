@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    container_name: clearpic-er-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/artifacts:/app/data/artifacts
+      - ./data/full_dedup/final_datasets:/app/data/full_dedup/final_datasets
+    restart: unless-stopped
